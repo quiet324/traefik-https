@@ -13,4 +13,4 @@ services:
     image: emilevauge/whoami
     labels: 
       - traefik.enable=true
-      - "traefik.frontend.rule=Host:whoami.docker.localhost"
+      - "traefik.frontend.rule=Host:whoami.liangyouapp.com"
