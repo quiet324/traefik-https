@@ -29,4 +29,4 @@ onHostRule = true
 endpoint = "unix:///var/run/docker.sock"
 domain = "liangyouapp.com"
 exposedByDefault = false
-swarmmode=true
+# swarmmode=true
