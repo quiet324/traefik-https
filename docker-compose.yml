@@ -1,20 +1,16 @@
-version: '2'
+version: "3"
 
-services:
+services: 
   traefik:
-    image: traefik:1.5.4
-    restart: always
-    ports:
+    image: traefik:alpine
+    ports: 
       - 80:80
-      - 443:443
-    networks:
-      - web
-    volumes:
+    volumes: 
+      - /etc/traefik:/etc/traefik
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/traefik.toml
-      - ./acme.json:/acme.json
-    container_name: traefik
 
-networks: 
-  web:
-    external: true
+  whoami:
+    image: emilevauge/whoami
+    labels: 
+      - traefik.enable=true
+      - "traefik.frontend.rule=Host:whoami.docker.localhost"

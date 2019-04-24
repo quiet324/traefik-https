@@ -1,29 +1,10 @@
-debug = false
-
-logLevel = "ERROR"
-defaultEntryPoints = ["https","http"]
+defaultEntryPoints = ["http"]
 
 [entryPoints]
   [entryPoints.http]
   address = ":80"
-    [entryPoints.http.redirect]
-    entryPoint = "https"
-  [entryPoints.https]
-  address = ":443"
-  [entryPoints.https.tls]
-
-[retry]
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "liangyoult.com"
-watch = true
+domain = "docker.localhost"
 exposedByDefault = false
-
-[acme]
-email = "510830568@qq.com"
-storage = "acme.json"
-entryPoint = "https"
-onHostRule = true
-[acme.httpChallenge]
-entryPoint = "http"
