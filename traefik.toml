@@ -6,5 +6,5 @@ defaultEntryPoints = ["http"]
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "docker.localhost"
+domain = "liangyouapp.com"
 exposedByDefault = false
