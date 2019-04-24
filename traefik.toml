@@ -8,13 +8,14 @@ defaultEntryPoints = ["http", "https"]
     [entryPoints.https.tls]
   [entryPoints.api]
   address = ":8080"
-  
+
 [api]
 entryPoint = "api"
 
 [acme]
+email = "510830568@qq.com"
+storage = "acme.json"
 entryPoint = "https"
-storage = "./acme.json"
 onHostRule = true
   [acme.httpChallenge]
   entryPoint = "http"
